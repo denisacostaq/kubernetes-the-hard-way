@@ -162,7 +162,7 @@ Copy the appropriate `kube-proxy` kubeconfig files to each worker instance:
 
 ```
 for instance in worker-1 worker-2; do
-  scp kube-proxy.kubeconfig ${instance}:~/
+  scp kube-proxy.kubeconfig vagrant@${instance}:~/
 done
 ```
 
@@ -170,7 +170,7 @@ Copy the appropriate `admin.kubeconfig`, `kube-controller-manager` and `kube-sch
 
 ```
 for instance in master-1 master-2; do
-  scp admin.kubeconfig kube-controller-manager.kubeconfig kube-scheduler.kubeconfig ${instance}:~/
+  scp admin.kubeconfig kube-controller-manager.kubeconfig kube-scheduler.kubeconfig vagrant@${instance}:~/
 done
 ```
 

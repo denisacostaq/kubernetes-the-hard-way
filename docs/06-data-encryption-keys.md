@@ -36,15 +36,16 @@ Copy the `encryption-config.yaml` encryption config file to each controller inst
 
 ```
 for instance in master-1 master-2; do
-  scp encryption-config.yaml ${instance}:~/
+  scp encryption-config.yaml vagrant@${instance}:~/
 done
 ```
 
-Move `encryption-config.yaml` encryption config file to appropriate directory.
+Copy `encryption-config.yaml` encryption config file to appropriate directory.
 
 ```
 for instance in master-1 master-2; do
-  ssh ${instance} sudo mv encryption-config.yaml /var/lib/kubernetes/
+  ssh vagrant@${instance} sudo mkdir /var/lib/kubernetes/
+  ssh vagrant@${instance} sudo cp encryption-config.yaml /var/lib/kubernetes/
 done
 ```
 
